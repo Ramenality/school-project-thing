@@ -1,2 +1,2 @@
 # school-project-thing
-Game is made for a school project, don't expect much, I just started learning about code.
+Basically I chose making an incremental as a school project and I don't even know how to code and I'm screwed.
