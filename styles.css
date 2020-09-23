@@ -15,12 +15,12 @@
 
 .generators-container {
     display: flex;
-    width: 600px;
+    width: 600px; 
     flex-wrap: wrap;
     margin: auto;
 }
 
-#currency {
+.currency {
     margin: 40px;
     font-size: 3em;
     text-align: center;

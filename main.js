@@ -19,6 +19,15 @@ function format(amount) {
     return mantissa.toFixed(2) + "e" + power
 }
 
+function buyGenerator(i) {
+    let g = generators[i - 1]
+    if (g.cost > money) return
+    money -= g.cost
+    g.amount += 1
+    g.bought += 1
+    g.mult *= 1.05
+}
+
 
 function updateGUI() {
     document.getElementById("currency").textContent = "You have $ " + format(money)
