@@ -1,36 +1,48 @@
-var gameData = {
-    points: 0,
-    pointsPerClick: 1,
-    pointsPerClickCost: 10
-  }
-  
-function gainpoints() { 
-    gameData.points += gameData.pointsPerClick
-    document.getElementById("pointsGained").innerHTML = gameData.points + " Points"
+var money = 10
+var generators = []
+var lastUpdate = Date.now()
+
+for (let i = 0; i < 10; i++) {
+    let generator = {
+        cost: Math.pow(Math.pow(10, i), i),
+        bought: 0,
+        amount: 0,
+        mult: 1
+    }
+    generators.push(generator)
 }
 
-function buyGoldPerClick() {
-   if (gameData.points >= gameData.pointsPerClickCost) {
-      gameData.points -= gameData.pointsPerClickCost
-      gameData.pointsPerClick += 1
-      gameData.pointsPerClickCost *= 2
-      document.getElementById("pointsGained").innerHTML = gameData.points + " Points"
-      document.getElementById("perClickUpgrade").innerHTML = "Upgrade Generator (Currently Level " + gameData.pointsPerClick + ") Cost: " + gameData.pointsPerClickCost + " points"
-  }
+function format(amount) {
+    let power = Math.floor(Math.log10(amount))
+    let mantissa = amount / Math.pow(10, power)
+    if (power < 3) return amount.toFixed(2)
+    return mantissa.toFixed(2) + "e" + power
 }
- 
-var mainGameLoop = window.setInterval(function() {
-    gainpoints()
-    if (typeof savegame.dwarves !== "undefined") gameData.dwarves = savegame.dwarves;
-  }, 5000)
 
-var saveGameLoop = window.setInterval(function() {
-    localStorage.setItem("school-project-save", JSON.stringify(gameData))
-    if (typeof savegame.dwarves !== "undefined") gameData.dwarves = savegame.dwarves;
-  }, 15000)
 
-var savegame = JSON.parse(localStorage.getItem("school-project-save"))
-   if (savegame !== null) {
-    gameData = savegame
-    if (typeof savegame.dwarves !== "undefined") gameData.dwarves = savegame.dwarves;if (typeof savegame.dwarves !== "undefined") gameData.dwarves = savegame.dwarves;
-  }
+function updateGUI() {
+    document.getElementById("currency").textContent = "You have $ " + format(money)
+    for (let i = 0; i < 10; i++) {
+        let g = generators[i]
+        document.getElementById("gen" + (i + 1)).innerHTML = "Amount " + format(g.amount) + "<br>Bought: " + g.amount + "<br>Mult " + format(g.mult) + "x<br>Cost: " + format(g.cost)
+    }
+}
+function productionLoop(diff) {
+    money += generators[0].amount * generators[0].mult * diff
+    for (let i = 1; i < 10; i++) {
+        generators[i - 1].amount += generators[i].amount * generators[i].mult * diff / 5
+    }
+}
+
+function MainLoop() {
+    var diff = (Date.now() - lastUpdate) / 1000
+    
+    productionLoop(diff)
+    updateGUI
+
+    lastUpdate = Date.now()
+}
+
+setInterval(MainLoop, 50)
+
+updateGUI()
