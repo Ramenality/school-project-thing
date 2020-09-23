@@ -6,7 +6,7 @@ var gameData = {
   
 function gainpoints() { 
     gameData.points += gameData.pointsPerClick
-    document.getElementById("pointsGained").innerHTML = gameData.points + " Points Gained"
+    document.getElementById("pointsGained").innerHTML = gameData.points + " Points"
 }
 
 function buyGoldPerClick() {
@@ -14,7 +14,7 @@ function buyGoldPerClick() {
       gameData.points -= gameData.pointsPerClickCost
       gameData.pointsPerClick += 1
       gameData.pointsPerClickCost *= 2
-      document.getElementById("pointsGained").innerHTML = gameData.points + " Points Gained"
+      document.getElementById("pointsGained").innerHTML = gameData.points + " Points"
       document.getElementById("perClickUpgrade").innerHTML = "Upgrade Generator (Currently Level " + gameData.pointsPerClick + ") Cost: " + gameData.pointsPerClickCost + " points"
   }
 }
