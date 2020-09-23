@@ -22,7 +22,7 @@ function buyGoldPerClick() {
 var mainGameLoop = window.setInterval(function() {
     gainpoints()
     if (typeof savegame.dwarves !== "undefined") gameData.dwarves = savegame.dwarves;
-  }, 3000)
+  }, 5000)
 
 var saveGameLoop = window.setInterval(function() {
     localStorage.setItem("school-project-save", JSON.stringify(gameData))
