@@ -47,7 +47,7 @@ function MainLoop() {
     var diff = (Date.now() - lastUpdate) / 1000
     
     productionLoop(diff)
-    updateGUI
+    updateGUI()
 
     lastUpdate = Date.now()
 }
