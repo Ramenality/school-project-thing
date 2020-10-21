@@ -3,7 +3,7 @@
     box-sizing: border-box;
 }
 
-.generator {
+.masin {
     border: 2px solid rgb(110, 219, 137);
     background-color: lightsalmon;
     text-align: center;
@@ -14,19 +14,41 @@
     user-select: none;
 }
 
-.generator.locked {
+.masin.lukus {
     background-color: rgb(206, 95, 95)
   }
 
-.generators-container {
+.masinate-nupud {
     display: flex;
     width: 600px; 
     flex-wrap: wrap;
     margin: auto;
 }
 
-#currency {
+#rahaühik {
     margin: 40px;
     font-size: 3em;
     text-align: center;
+    color: blueviolet
+}
+
+#seletus {
+    margin: 20px;
+    font-size: 1.75em;
+    text-align: center;
+    color: indigo;
+}
+
+#seletus2 {
+    margin: 15px;
+    font-size: 1.5em;
+    text-align: center;
+    color: teal;
+}
+
+#seletus3 {
+    margin: 10px;
+    font-size: 1.25em;
+    text-align: center;
+    color: steelblue;
 }
