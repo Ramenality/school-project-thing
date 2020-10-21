@@ -5,21 +5,24 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
       <link rel="stylesheet" href="styles.css">
-      <title>school project</title>
+      <title>kooli projekt</title>
     </head>
     <body>
-      <div id="currency">You have $10</div>
-      <div class="generators-container">
-        <div class="generator" id="gen1" onclick="buyGenerator(1)"></div>
-        <div class="generator" id="gen2" onclick="buyGenerator(2)"></div>
-        <div class="generator" id="gen3" onclick="buyGenerator(3)"></div>
-        <div class="generator" id="gen4" onclick="buyGenerator(4)"></div>
-        <div class="generator" id="gen5" onclick="buyGenerator(5)"></div>
-        <div class="generator" id="gen6" onclick="buyGenerator(6)"></div>
-        <div class="generator" id="gen7" onclick="buyGenerator(7)"></div>
-        <div class="generator" id="gen8" onclick="buyGenerator(8)"></div>
-        <div class="generator" id="gen9" onclick="buyGenerator(9)"></div>
-        <div class="generator" id="gen10" onclick="buyGenerator(10)"></div>
+      <div id= "rahaühik">Sul on €</div>
+      <div id= "seletus">Kui sa ostad uue masina, teeb see masin eelmiseid masinaid juurde.</div>
+      <div id= "seletus2">Kui sa ostad samu masinaid, muutub korrutaja suuremaks ja sa toodad rohkem raha/masinaid. (See on väärt seda!)</div>
+      <div id= "seletus3">(korrutaja muutub alusel → kor. ^ 1.05 * 1.2 * (1.2 ^ 1.5) - 0.522 * kor. ) [kor. = korrutaja]</div>
+      <div class="masinate-nupud">
+        <div class="masin" id="gen1" onclick="OstaMasin(1)"></div>
+        <div class="masin" id="gen2" onclick="OstaMasin(2)"></div>
+        <div class="masin" id="gen3" onclick="OstaMasin(3)"></div>
+        <div class="masin" id="gen4" onclick="OstaMasin(4)"></div>
+        <div class="masin" id="gen5" onclick="OstaMasin(5)"></div>
+        <div class="masin" id="gen6" onclick="OstaMasin(6)"></div>
+        <div class="masin" id="gen7" onclick="OstaMasin(7)"></div>
+        <div class="masin" id="gen8" onclick="OstaMasin(8)"></div>
+        <div class="masin" id="gen9" onclick="OstaMasin(9)"></div>
+        <div class="masin" id="gen10" onclick="OstaMasin(10)"></div>
       </div>
     </body>
     <script src="main.js"></script>
