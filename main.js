@@ -1,49 +1,49 @@
-var money = 10
-var generators = []
+var raha = 10
+var masin = []
 var lastUpdate = Date.now()
 
 for (let i = 0; i < 10; i++) {
-  let generator = {
-    cost: Math.pow(Math.pow(10, i), i) * 10,
-    bought: 0,
-    amount: 0,
-    mult: 1
+  let masinad = {
+    hind: Math.pow(Math.pow(10, i), i) * 10,
+    ostetud: 0,
+    kogus: 0,
+    korrutaja: 1
   }
-  generators.push(generator)
+  masin.push(masinad)
 }
 
-function format(amount) {
-  let power = Math.floor(Math.log10(amount))
-  let mantissa = amount / Math.pow(10, power)
-  if (power < 3) return amount.toFixed(2)
+function format(kogus) {
+  let power = Math.floor(Math.log10(kogus))
+  let mantissa = kogus / Math.pow(10, power)
+  if (power < 3) return kogus.toFixed(2)
   return mantissa.toFixed(2) + "e" + power
 }
 
-function buyGenerator(i) {
-  let g = generators[i - 1]
-  if (g.cost > money) return
-  money -= g.cost
-  g.amount += 1
-  g.bought += 1
-  g.mult *= 1.05
-  g.cost *= 1.35
+function OstaMasin(i) {
+  let g = masin[i - 1]
+  if (g.hind > raha) return
+  raha -= g.hind
+  g.kogus += 1
+  g.ostetud += 1
+  g.korrutaja = Math.pow(g.korrutaja, 1.05)*1.2*Math.pow(1.2, 1.5)-0.522*g.korrutaja
+  g.hind = Math.pow(g.hind, 1.06)
 }
 
 
 function updateGUI() {
-  document.getElementById("currency").textContent = "You have $" + format(money)
+  document.getElementById("rahaühik").textContent = "Sul on €" + format(raha)
   for (let i = 0; i < 10; i++) {
-    let g = generators[i]
-    document.getElementById("gen" + (i + 1)).innerHTML = "Amount: " + format(g.amount) + "<br>Bought: " + g.bought + "<br>Mult: " + format(g.mult) + "x<br>Cost: " + format(g.cost)
-    if (g.cost > money) document.getElementById("gen" + (i + 1)).classList.add("locked")
-    else document.getElementById("gen" + (i + 1)).classList.remove("locked")
+    let g = masin[i]
+    document.getElementById("gen" + (i + 1)).innerHTML = "Kogus: " + format(g.kogus) + "<br>Ostetud: " + g.ostetud + "<br>Korrutaja: " + format(g.korrutaja) + "x<br>Hind: " + format(g.hind) + "€"
+    if (g.hind > raha) document.getElementById("gen" + (i + 1)).classList.add("lukus")
+    else document.getElementById("gen" + (i + 1)).classList.remove("lukus")
   }
 }
 
 function productionLoop(diff) {
-  money += generators[0].amount * generators[0].mult * diff
+  raha += masin[0].kogus * masin[0].korrutaja * diff
   for (let i = 1; i < 10; i++) {
-    generators[i - 1].amount += generators[i].amount * generators[i].mult * diff / 5
+    masin[i - 1].kogus += masin[i].kogus * masin[i].korrutaja * diff / 5
   }
 }
 
