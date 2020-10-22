@@ -26,15 +26,15 @@ function OstaMasin(i) {
   g.kogus += 1
   g.ostetud += 1
   g.korrutaja = Math.pow(g.korrutaja, 1.05) * 1.2 * Math.pow(1.2, 1.4845) - 0.522 * g.korrutaja
-  if (g.ostetud > 24)  {
-     g.korrutaja = Math.pow(g.korrutaja, 1.02) * 1.2 * ((g.korrutaja / (g.ostetud ^ 3)) * 2) ^ ((g.korrutaja/10)/(g.ostetud ^ (g.ostetud*(g.ostetud-0.95*g.ostetud)))) - 0.522 * g.korrutaja * ((g.ostetud/10)*2.98/100)
-  }
+  if (g.ostetud < 25 > 16) g.korrutaja = Math.pow(g.korrutaja, 1.02) * 1.02 * Math.pow(1.2, 1.42) - 0.652 * g.korrutaja
+  if (g.ostetud < 50 > 26) g.korrutaja *= 1.85
+  if (g.ostetud > 51) g.korrutaja *= 1.15
   g.hind = Math.pow(g.hind, 1.06)
 }
 
 
 function updateGUI() {
-  document.getElementById("rahaühik").textContent = "Sul on €" + format(raha)
+  document.getElementById("rahaühik").textContent = "Sul on " + format(raha) + "€"
   for (let i = 0; i < 10; i++) {
     let g = masin[i]
     document.getElementById("gen" + (i + 1)).innerHTML = "Kogus: " + format(g.kogus) + "<br>Ostetud: " + g.ostetud + "<br>Korrutaja: " + format(g.korrutaja) + "x<br>Hind: " + format(g.hind) + "€"
