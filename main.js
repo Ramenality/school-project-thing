@@ -2,7 +2,7 @@ var raha = 10
 var masin = []
 var lastUpdate = Date.now()
 
-for (let i = 0; i < 10; i++) 
+for (let i = 0; i < 10; i++) {
   let masinad = {
     hind: Math.pow(Math.pow(10, i), i) * 10,
     ostetud: 0,
