@@ -26,7 +26,7 @@ function OstaMasin(i) {
   g.kogus += 1
   g.ostetud += 1
   g.korrutaja = Math.pow(g.korrutaja, 1.05) * 1.2 * Math.pow(1.2, 1.4845) - 0.522 * g.korrutaja
-  if (g.ostetud < 25 > 16) g.korrutaja = Math.pow(g.korrutaja, 1.02) * 1.02 * Math.pow(1.2, 1.42) - 0.652 * g.korrutaja
+  if (g.ostetud < 25 > 16) g.korrutaja = Math.pow(g.korrutaja, 1.07) * 1.02 * Math.pow(1.2, 1.48) - 0.652 * g.korrutaja
   if (g.ostetud < 50 > 26) g.korrutaja *= 1.85
   if (g.ostetud > 51) g.korrutaja *= 1.15
   g.hind = Math.pow(g.hind, 1.06)
