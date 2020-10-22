@@ -28,8 +28,9 @@ function OstaMasin(i) {
   g.korrutaja = Math.pow(g.korrutaja, 1.05) * 1.2 * Math.pow(1.2, 1.4845) - 0.522 * g.korrutaja
   if (g.ostetud > 19)  {
      g.korrutaja = Math.pow(g.korrutaja, 1.05) * 1.2 * ((g.korrutaja / 6.7) * 2) ^ ((g.korrutaja/10)/(g.ostetud ^ 2)) - 0.522 * g.korrutaja * ((g.ostetud + 1)/20)
-    else if (g.ostetud > 29)
+   }  else if (g.ostetud > 29) {
       g.korrutaja = Math.pow(g.korrutaja, 1.02) * 1.2 * ((g.korrutaja / (g.kogus/g.ostetud)) * 2) ^ ((g.korrutaja/10)/(g.ostetud ^ 2.75)) - 0.522 * g.korrutaja * ((g.ostetud + 1)/100)
+      }
   }
   g.hind = Math.pow(g.hind, 1.06)
 }
