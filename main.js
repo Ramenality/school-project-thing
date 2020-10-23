@@ -34,7 +34,6 @@ function OstaMasin(i) {
   g.hind = Math.pow(g.hind, 1.06)
 }
 
-
 function updateGUI() {
   document.getElementById("rahaühik").textContent = "Sul on " + format(raha) + "€"
   for (let i = 0; i < 10; i++) {
