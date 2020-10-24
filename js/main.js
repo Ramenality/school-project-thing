@@ -1,10 +1,12 @@
-var raha = 10
+var raha = 15
 var masin = []
 var lastUpdate = Date.now()
 
+if (raha >= 100) alert("Sa võitsid!")
+
 for (let i = 0; i < 10; i++) {
   let masinad = {
-    hind: Math.pow(Math.pow(8, i), i) * 10,
+    hind: Math.pow(Math.pow(35, i), i * 1.025) * 15,
     ostetud: 0,
     kogus: 0,
     korrutaja: 1
@@ -25,11 +27,9 @@ function OstaMasin(i) {
   raha -= g.hind
   g.kogus += 1
   g.ostetud += 1
-  g.korrutaja = Math.pow(g.korrutaja, 1.08) * 1.2 * Math.pow(1.2, 1.4645) - 0.522 * g.korrutaja
-  if (g.ostetud > 20) g.korrutaja *= 1.2
-  if (g.ostetud > 40) g.korrutaja *= 1.15
-  if (g.ostetud > 60) g.korrutaja *= 1.1
-  if (g.ostetud > 80) g.korrutaja *= 1.2
+  g.korrutaja = Math.pow(g.korrutaja, 1.07) * 1.2 * Math.pow(1.2, 1.4645) - 0.522 * g.korrutaja
+  if (g.ostetud > 20) g.korrutaja *= 1.035
+  if (g.ostetud > 40) g.korrutaja *= 1.035
   g.hind = Math.pow(g.hind, 1.06)
 }
 
