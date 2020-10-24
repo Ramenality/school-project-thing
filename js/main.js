@@ -2,8 +2,6 @@ var raha = 15
 var masin = []
 var lastUpdate = Date.now()
 
-if (raha >= 15) alert("Sa võitsid!")
-
 for (let i = 0; i < 10; i++) {
   let masinad = {
     hind: Math.pow(Math.pow(35, i), i * 1.025) * 15,
