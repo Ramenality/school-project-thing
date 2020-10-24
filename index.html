@@ -6,15 +6,14 @@
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
       <link rel="stylesheet" href="styles.css">
       <script defer src="js/lib/break_infinity.js" charset="utf-8" type="text/javascript"></script>
-      <script defer src="js/main.js" charset="utf-8" type="text/javascript"></script>
       <title>loovtöö</title>
     </head>
     <body>
       <div id= "rahaühik">Sul on €</div>
       <div id= "seletus">Kui sa ostad uue masina, teeb see masin eelmiseid masinaid juurde.</div>
-      <div id= "seletus2">Kui sa ostad samu masinaid, muutub korrutaja suuremaks ja sa toodad rohkem raha/masinaid. (See on väärt seda!)</div>
-      <div id= "seletus3">(korrutaja muutub → kor. = (kor. ^ 1.06) * 1.2 * (1.2 ^ 1.4845) - 0.522 * g.korrutaja [kor. = korrutaja] [ost. = ostetud]</div>
-      <div id= "auhinnad">Kui sa ostad 20, 40, 60 või 80 millegist, saad sa 1.2, 1.15 või 1.1x rohkem korrutajat iga kord kui sa ostad masinaid. (Kui ost. on alla 99, saad sa lisaks 1.1x korrutajat)</div>
+      <div id= "seletus2">Kui sa ostad samu masinaid, muutub korrutaja suuremaks ja sa toodad rohkem raha/masinaid.</div>
+      <div id= "seletus3">(korrutaja muutub → kor. = (kor. ^ 1.07) * 1.2 * (1.2 ^ 1.4845) - 0.522 * g.korrutaja [kor. = korrutaja] [ost. = ostetud]</div>
+      <div id= "auhinnad">Kui sa ostad 20 või 40 millegist, saad sa 1.035x rohkem korrutajat iga kord kui sa ostad masinaid.</div>
       <div class="masinate-nupud">
         <div class="masin" id="gen1" onclick="OstaMasin(1)"></div>
         <div class="masin" id="gen2" onclick="OstaMasin(2)"></div>
@@ -28,4 +27,5 @@
         <div class="masin" id="gen10" onclick="OstaMasin(10)"></div>
       </div>
     </body>
+    <script src="main.js"></script>
     </html>
