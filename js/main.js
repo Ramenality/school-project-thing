@@ -2,7 +2,7 @@ var raha = 15
 var masin = []
 var lastUpdate = Date.now()
 
-if (raha >= 100) alert("Sa võitsid!")
+if (raha >= 15) alert("Sa võitsid!")
 
 for (let i = 0; i < 10; i++) {
   let masinad = {
