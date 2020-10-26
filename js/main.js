@@ -2,6 +2,9 @@ var raha = 15
 var masin = []
 var lastUpdate = Date.now()
 
+if (Date.now(1)) alert("See mäng pole veel valmis ja selles võib olla palju vigu sees.")
+
+
 for (let i = 0; i < 10; i++) {
   let masinad = {
     hind: Math.pow(Math.pow(35, i), i * 1.025) * 15,
