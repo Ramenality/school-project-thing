@@ -2,8 +2,7 @@ var raha = 15
 var masin = []
 var lastUpdate = Date.now()
 
-if (Date.now(1)) alert("See mäng pole veel valmis ja selles võib olla palju vigu sees.")
-
+if (Date.now(500)) alert("See mäng pole veel valmis ja selles võib olla palju vigu sees.")
 
 for (let i = 0; i < 10; i++) {
   let masinad = {
