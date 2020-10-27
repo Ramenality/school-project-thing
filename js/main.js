@@ -31,8 +31,7 @@ function OstaMasin(i) {
   if ((g.ostetud > 20) && (g.ostetud < 75)) g.korrutaja *= 1.035
   if ((g.ostetud > 40) && (g.ostetud < 150)) g.korrutaja *= 1.035
   if ((g.ostetud > 75) && (g.ostetud < 100)) g.korrutaja *= 1.05
-  if ((g.korrutaja > (g.hind-1e100)) && (g.korrutaja > 1e50)) g.korrutaja *= 1.0015^g.bought
-  g.hind = Math.pow(g.hind, 1.06)
+  g.hind = Math.pow(g.hind, 1.08)
 }
 
 function updateGUI() {
