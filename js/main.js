@@ -6,7 +6,7 @@ if (Date.now()) alert("See mäng pole veel valmis ja selles võib olla (ilmselt 
 
 for (let i = 0; i < 10; i++) {
   let masinad = {
-    hind: Math.pow(Math.pow(35, i), i * 1.025) * 15,
+    hind: Math.pow(Math.pow(35, i), i * 1.025) * 10,
     ostetud: 0,
     kogus: 0,
     korrutaja: 1
