@@ -27,7 +27,7 @@ function OstaMasin(i) {
   raha -= g.hind
   g.kogus += 1
   g.ostetud += 1
-  g.korrutaja = Math.pow(g.korrutaja, 1.07) * 1.2 * Math.pow(1.2, 1.4645) - 0.522 * g.korrutaja
+  g.korrutaja = Math.pow(g.korrutaja, 1.1) * 1.2 * Math.pow(1.2, 1.4645) - 0.522 * g.korrutaja
   if ((g.ostetud > 20) && (g.ostetud < 75)) g.korrutaja *= 1.035
   if ((g.ostetud > 40) && (g.ostetud < 150)) g.korrutaja *= 1.035
   if ((g.ostetud > 75) && (g.ostetud < 100)) g.korrutaja *= 1.05
